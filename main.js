@@ -18,7 +18,7 @@ testBox.onmousedown = function test() {
         h1.innerHTML = "Click";
         const t0 = performance.now();
         testBox.onmousedown = function () {
-            h1.innerHTML = `1 ms`;
+            h1.innerHTML = `${Math.trunc(performance.now() - t0)} ms`;
             testBox.onmousedown = test;
         };
     }, delay);
